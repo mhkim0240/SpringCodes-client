@@ -1,9 +1,9 @@
-package com.leo.codes.api;
+package com.leo.codes.client.api;
 
+/*
 
-import com.leo.codes.model.User;
+import com.leo.codes.client.model.User;
 import lombok.RequiredArgsConstructor;
-import org.apache.coyote.Response;
 import org.springframework.web.bind.annotation.*;
 
 
@@ -39,3 +39,6 @@ public class UserController {
     }
 
 }
+
+
+ */

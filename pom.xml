@@ -9,10 +9,10 @@
 		<version>2.4.0</version>
 		<relativePath /> <!-- lookup parent from repository -->
 	</parent>
-	<groupId>com.leo</groupId>
-	<artifactId>codes</artifactId>
+	<groupId>com.leo.codes</groupId>
+	<artifactId>client</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>codes</name>
+	<name>client</name>
 	<description>Demo project for Spring Boot</description>
 	<properties>
 		<java.version>11</java.version>
@@ -20,7 +20,7 @@
 
 	<dependencies>
 
-		<!-- Swagger   -->
+		<!-- Swagger
 		<dependency>
 			<groupId>io.springfox</groupId>
 			<artifactId>springfox-swagger2</artifactId>
@@ -31,7 +31,7 @@
 			<artifactId>springfox-swagger-ui</artifactId>
 			<version>2.9.2</version>
 		</dependency>
-
+-->
 
 
 		<!-- 기본 라이브러리 -->

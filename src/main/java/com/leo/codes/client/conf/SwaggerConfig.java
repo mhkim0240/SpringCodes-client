@@ -1,6 +1,6 @@
-package com.leo.codes.conf;
+package com.leo.codes.client.conf;
 
-
+/*
 import java.util.ArrayList;
 import java.util.List;
 
@@ -58,3 +58,5 @@ public class SwaggerConfig {
                 .build();
     }
 }
+
+ */
