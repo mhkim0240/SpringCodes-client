@@ -16,6 +16,8 @@ import javax.annotation.PostConstruct;
 import java.io.DataOutputStream;
 import java.net.HttpURLConnection;
 import java.net.URL;
+import java.util.Calendar;
+import java.util.TimeZone;
 
 
 @SpringBootApplication
@@ -36,7 +38,17 @@ public class ClientApplication {
 
 	void test()
 	{
-		System.out.println("test");
+
+		String time = getCurrentDD(1);
+
+		//System.out.println("test");
+/*
+		while(true)
+		{
+			String time = getCurrentMiliSecond(1);
+			System.out.println("time: " + time);
+		}
+*/
 /*
 		DateTimeZone seoul = DateTimeZone.forID("Asia/Seoul");
 		DateTime dateTime = new DateTime(seoul);
@@ -46,16 +58,84 @@ public class ClientApplication {
 */
 		//String statDtCondition = "201511051515";
 
-
+/*
 		try {
 			sendUser(new User("John Doe"));
 			//System.out.println("test");
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
+ */
+	}
+	public static String getCurrentDD(int min) {
+
+		TimeZone kstTz = TimeZone.getDefault();
+		Calendar ccal = Calendar.getInstance(kstTz);
+		ccal.add(Calendar.MINUTE, -min);
+		int year =ccal.get(Calendar.YEAR);
+		int month = ccal.get(Calendar.MONTH) + 1;
+		int dayOfMonth =ccal.get(Calendar.DAY_OF_MONTH);
+		int hourOfDay = ccal.get(Calendar.HOUR_OF_DAY);
+		int minute =ccal.get(Calendar.MINUTE);
+		int second = ccal.get(Calendar.SECOND);
+
+		String thisTime =
+				ccal.get(Calendar.YEAR) +
+						((month<10)?"0":"")+month +
+						((dayOfMonth<10)?"0":"")+dayOfMonth;
+		return thisTime;
+	}
+	public static String getCurrentMiliSecond(int min) {
+
+
+		TimeZone kstTz = TimeZone.getDefault();
+		Calendar ccal = Calendar.getInstance(kstTz);
+		ccal.add(Calendar.MINUTE, -min);
+
+		int year = Calendar.YEAR;//ccal.get(Calendar.YEAR);
+		int month = ccal.get(Calendar.MONTH) + 1;
+		int dayOfMonth =ccal.get(Calendar.DAY_OF_MONTH);
+		int hourOfDay = ccal.get(Calendar.HOUR_OF_DAY);
+		int minute =ccal.get(Calendar.MINUTE);
+		int second =ccal.get(Calendar.SECOND);
+		int milisecond =ccal.get(Calendar.MILLISECOND);
+
+		String thisTime =
+				ccal.get(Calendar.YEAR) +
+						((month<10)?"0":"")+month +
+						((dayOfMonth<10)?"0":"")+dayOfMonth +
+						((hourOfDay<10)?"0":"")+hourOfDay +
+						((minute<10)?"0":"")+minute +
+						((second<10)?"0":"")+second +
+						milisecond
+				;
+		//20240926140512.504
+		//20240926150019.343
+		return thisTime;
 	}
 
 
+
+	public static String getCurrentMin(int min) {
+		TimeZone kstTz = TimeZone.getDefault();
+		Calendar ccal = Calendar.getInstance(kstTz);
+		ccal.add(Calendar.MINUTE, -min);
+		int year =ccal.get(Calendar.YEAR);
+		int month = ccal.get(Calendar.MONTH) + 1;
+		int dayOfMonth =ccal.get(Calendar.DAY_OF_MONTH);
+		int hourOfDay = ccal.get(Calendar.HOUR_OF_DAY);
+		int minute =ccal.get(Calendar.MINUTE);
+
+
+		String thisTime =
+				ccal.get(Calendar.YEAR) +
+						((month<10)?"0":"")+month +
+						((dayOfMonth<10)?"0":"")+dayOfMonth +
+						((hourOfDay<10)?"0":"")+hourOfDay +
+						((minute<10)?"0":"")+minute ;
+
+		return thisTime;
+	}
 
 
 	void sendUser(User user) throws Exception {
