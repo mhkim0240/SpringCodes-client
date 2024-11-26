@@ -38,8 +38,15 @@ public class ClientApplication {
 
 	void test()
 	{
-
-		String time = getCurrentDD(1);
+///*
+		try {
+			sendUser(new User("John Doe"));
+			//System.out.println("test");
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+ //*/
+		//String time = getCurrentDD(1);
 
 		//System.out.println("test");
 /*
@@ -58,14 +65,7 @@ public class ClientApplication {
 */
 		//String statDtCondition = "201511051515";
 
-/*
-		try {
-			sendUser(new User("John Doe"));
-			//System.out.println("test");
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
- */
+
 	}
 	public static String getCurrentDD(int min) {
 
@@ -139,7 +139,7 @@ public class ClientApplication {
 
 
 	void sendUser(User user) throws Exception {
-		String urlStr = "http://localhost:8080/api/users";
+		String urlStr = "http://localhost:8080/codes/api/users";
 		URL url = new URL(urlStr);
 		HttpURLConnection conn = (HttpURLConnection) url.openConnection();
 
